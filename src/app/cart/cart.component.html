@@ -1,0 +1,74 @@
+
+<div class="album py-5 bg ">
+    <div class="container">
+
+     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-center">
+         <div class="col-md-4 mb-4" *ngFor="let i of proarr">
+            <div class="card shadow-sm">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{i.image}}"
+                 role="img" aria-label="Placeholder: Thumbnail" />
+            
+               <div class="card-body">
+                <strong class="text-muted">{{i.price | currency:'$'}}</strong>
+                  <p class="card-text">{{i.description | slice: 0:50}}...</p>
+                   <div class="d-flex justify-content-center align-items-center">
+                       <div class="btn-group">
+                       <button routerLink="../register" type="button" class="btn btn-sm btn-outline-warning" (click)="addCard(i)">Check Out</button>
+                       <input type="number" [value]="quantity" max="100" min="1" class="btn btn-sm btn-outline-success ml-2"  placeholder="Quantity">
+
+                      </div>
+                       
+                   </div>
+                 </div> 
+                 
+             </div> 
+
+             
+          </div>
+     </div>
+    
+ </div>
+</div>
+
+
+
+<!-- 
+<section>
+  <div class="spacer">
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-lg-9">
+          <div class="row shop-listing">
+            <table class="table shop-table" *ngIf="carts">
+              <tr>
+                <th class="b-0">Name</th>
+                <th class="b-0">Price</th>
+                <th class="b-0">Quantity</th>
+                <th class="b-0 text-right">Total Price</th>
+              </tr>
+              <tr *ngFor="let i of carts.items">
+                <td>{{ i.productId.name }}</td>
+                <td>{{ i.productId.price }}</td>
+                <td>
+                  <button class="btn btn-primary btn-sm" (click)="_increamentQTY(i.productId._id,1)">+</button>
+                  {{ i.quantity }}
+                  <button class="btn btn-primary btn-sm">-</button>
+                </td>
+                <td class="text-right">
+                  <h5 class="font-medium m-b-30">{{ i.total }}</h5>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" align="right">Subtotal :{{ carts.subTotal }}</td>
+                <td colspan="4" align="right">
+                  <button class="btn btn-danger" (click)="_emptyCart()">Empty Cart</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
